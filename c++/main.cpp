@@ -52,7 +52,7 @@ int main()
 
 
     //<<<<<<<<output>>>>>>>>>>>>
-    //cout << "ENC: " << secret << "\n";
+    cout << "FRIST LEVEL ENCRYPTIPON: " << secret << "\n";
 
 
 
@@ -60,12 +60,12 @@ int main()
     //=================================
     //THIS IS MY SECOND LEVEL ENCRYPTIPON
     //=================================
-    cout << "Bainary: ";
+    cout << "SECOND LEVEL ENCRYPTIPON: ";
     int c =0;
     while(secret[c]!='\0'){
         char character = secret[c];
         bitset<8> binaryRepresentation(character);
-        cout << binaryRepresentation;
+        cout << binaryRepresentation << ".";
         c++;
     }
 
