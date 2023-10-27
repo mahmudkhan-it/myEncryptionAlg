@@ -10,7 +10,7 @@ int main() {
     int arrLen = sizeof(arr) - 1;
 
     // Secret array
-    char secret[1000];
+    char secret[1000] = {0}; // Initialize with zeros
     int i;
 
     // Message input as an array.
@@ -19,20 +19,16 @@ int main() {
     fgets(message, sizeof(message), stdin);
 
     // For first level encryption
-    for (i = 0; i < sizeof(message); ++i) {
-        char data[1];
+    for (i = 0; i < sizeof(message) && message[i] != '\0'; ++i) {
+        char data = 0;
 
-        if (message[i] == '\0') {
-            break;
-        } else {
-            for (int x = 0; x < arrLen; x++) {
-                if (arr[x] == message[i]) {
-                    data[0] = arr[x + 3]; // here 3 is the secret shifting.
-                    break;
-                }
+        for (int x = 0; x < arrLen; x++) {
+            if (arr[x] == message[i]) {
+                data = arr[(x + 3) % arrLen]; // here 3 is the secret shifting.
+                break;
             }
-            secret[i] = data[0];
         }
+        secret[i] = data;
     }
 
     // Output for first level encryption
@@ -43,7 +39,7 @@ int main() {
     // =================================
 
     int c = 0;
-    int decimaArr[1000];
+    int decimaArr[1000] = {0}; // Initialize with zeros
 
     while (secret[c] != '\0') {
         char character = secret[c];
@@ -57,8 +53,8 @@ int main() {
     // Output for second level encryption
     printf("SECOND LEVEL ENCRYPTION: ");
     int x = 0;
-    while (decimaArr[x] != '\0') {
-        printf("%d", decimaArr[x]);
+    while (decimaArr[x] != 0) {
+        printf("%d.", decimaArr[x]);
         x++;
     }
 
