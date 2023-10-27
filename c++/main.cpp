@@ -16,8 +16,10 @@ int main()
     int arrLen = 1000;
     char arr[arrLen+1]={"ABCDEFGHIJKLMN12345abcdefghijklmnopqrstuvwxyzOPQRSTUVWXYZ67890abcdefghijklmnopqrstuvwxyz !@#$%^&*,.;:/?abcdefghijklmnopqrstuvwxyz"};
 
-    //newarr
+    //secret arr
     char secret[arrLen+1];
+    //decima arr
+    int decimaArr[arrLen+1];
 
     // Message input as a array.
     int msgArrLen =1000;
@@ -38,7 +40,7 @@ int main()
             //for 2 s
             for(int x =0; x < sizeof(arr); x++){
                 if(arr[x] == message[i]){
-                    data[0] = arr[x+3]; //here 1 is the secret shifting.
+                    data[0] = arr[x+3]; //here 3 is the secret shifting.
                     break;
                 }
             }//for 2 e
@@ -53,15 +55,24 @@ int main()
     //=================================
     //THIS IS SECOND LEVEL ENCRYPTIPON
     //=================================
-    cout << "SECOND LEVEL ENCRYPTIPON: ";
-    int c =0;
+
+    int c=0;
     while(secret[c]!='\0'){
         char character = secret[c];
         // CONVART TO DECIMAL
         int decimalValue = static_cast<int>(character);
-        //<<<<<<<<output>>>>>>>>>>>>
-        cout << decimalValue*3 << ".";//I multiply by 3 for make it more strong
+        //add to decimaArr
+         decimaArr[c] = decimalValue*3;//here 3 is the secret shifting.
         c++;
+    }
+
+
+    //<<<<<<<<output>>>>>>>>>>>>
+    cout << "SECOND LEVEL ENCRYPTIPON: ";
+    int x=0;
+    while(decimaArr[x]!='\0'){
+        cout << decimaArr[x];
+        x++;
     }
 
 
