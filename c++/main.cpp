@@ -5,6 +5,9 @@ using namespace std;
 int main()
 
 {
+
+
+
     //=================================
     //THIS IS FRIST LEVEL ENCRYPTIPON
     //=================================
@@ -54,11 +57,13 @@ int main()
     int c =0;
     while(secret[c]!='\0'){
         char character = secret[c];
-        bitset<8> binaryRepresentation(character);
+        int decimalValue = static_cast<int>(character);
         //<<<<<<<<output>>>>>>>>>>>>
-        cout << binaryRepresentation << ".";
+        cout << decimalValue << ".";
         c++;
     }
+
+
 
     //reset secret arr
     secret[0]={};
