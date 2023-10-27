@@ -57,9 +57,10 @@ int main()
     int c =0;
     while(secret[c]!='\0'){
         char character = secret[c];
+        // CONVART TO DECIMAL
         int decimalValue = static_cast<int>(character);
         //<<<<<<<<output>>>>>>>>>>>>
-        cout << decimalValue << ".";
+        cout << decimalValue*3 << ".";//I multiply by 3 for make it more strong
         c++;
     }
 
