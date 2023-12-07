@@ -2,11 +2,14 @@
 #include <bitset>
 
 using namespace std;
+
 int main()
 
 {
-
-
+    cout << "=======================================================\n";
+    cout <<"                        ArmorCrypt\n";
+    cout <<"                   Make your data secret\n";
+    cout << "=======================================================\n";
 
     //=================================
     //THIS IS FRIST LEVEL ENCRYPTIPON
@@ -50,7 +53,11 @@ int main()
     }//for 1 e
 
     //<<<<<<<<output>>>>>>>>>>>>
-    cout << "FRIST LEVEL ENCRYPTIPON: " << secret << "\n";
+    cout << "\n";
+    cout << "\n";
+    cout << "[+] FRIST LEVEL ENCRYPTIPON: \n" << secret;
+    cout << "\n";
+    cout << "\n";
 
     //=================================
     //THIS IS SECOND LEVEL ENCRYPTIPON
@@ -68,11 +75,29 @@ int main()
 
 
     //<<<<<<<<output>>>>>>>>>>>>
-    cout << "SECOND LEVEL ENCRYPTIPON: ";
+    cout << "=================================\n\n";
+    cout << "[+] SECOND LEVEL ENCRYPTIPON: \n";
     int x=0;
     while(decimaArr[x]!='\0'){
         cout << decimaArr[x];
         x++;
+    }
+    cout << "\n";
+    cout << "\n";
+
+
+    //=================================
+    //THIS IS THIRD LEVEL ENCRYPTIPON
+    //=================================
+    cout << "=================================\n\n";
+    cout << "[+] THIRD LEVEL ENCRYPTIPON: \n";
+    int u=0;
+    while(decimaArr[u]!='\0'){
+        int decimalNumber = decimaArr[u];
+        bitset<9> binary(decimalNumber);
+        string b_n = binary.to_string();
+        cout << (stoi(b_n)+3)*3;//<<<<<<<<output>>>>>>>>>>>>
+        u++;
     }
 
 
