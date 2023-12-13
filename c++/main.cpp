@@ -96,7 +96,7 @@ int main()
         int decimalNumber = decimaArr[u];
         bitset<9> binary(decimalNumber);
         string b_n = binary.to_string();
-        cout << (stoi(b_n)+3)*3;//<<<<<<<<output>>>>>>>>>>>>
+        cout << (stoi(b_n)+9)*3;//<<<<<<<<output>>>>>>>>>>>>
         u++;
     }
 
